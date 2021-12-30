@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="282.0" prefWidth="539.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursach88.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <GridPane alignment="TOP_CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="137.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="128.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <children>
+            <Button onAction="#onHelloButtonClick" prefHeight="30.0" prefWidth="125.0" text="Сравнить" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </GridPane.margin>
+            </Button>
+            <ChoiceBox fx:id="choiceBox" prefHeight="30.0" prefWidth="125.0" GridPane.columnIndex="1">
+                <GridPane.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </GridPane.margin>
+            </ChoiceBox>
+            <Label prefHeight="29.0" prefWidth="133.0" text="Выберите тип сжатия">
+                <GridPane.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </GridPane.margin>
+            </Label>
+            <Label fx:id="welcomeText" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </GridPane.margin>
+            </Label>
+        </children>
+        <VBox.margin>
+            <Insets />
+        </VBox.margin>
+    </GridPane>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+
+          <BarChart fx:id="ResultChart" prefHeight="150.0" prefWidth="507.0" HBox.hgrow="ALWAYS">
+              <xAxis>
+                  <CategoryAxis label="Тип сжатия" side="BOTTOM" fx:id="x" />
+              </xAxis>
+              <yAxis>
+                  <NumberAxis fx:id="y" label="Время сжатия" side="LEFT" />
+              </yAxis>
+          </BarChart>
+      </children>
+   </HBox>
+    <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colAlg" prefWidth="133.0" text="Алгоритм" />
+            <TableColumn fx:id="colTime" prefWidth="131.0" text="Время" />
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+    </TableView>
+</VBox>
